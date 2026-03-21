@@ -2,7 +2,7 @@ import React from 'react'
 
 function Chatsection({ inputValue, responseData, loading }) {
 
-  console.log(loading)
+ 
   return (
     <>
 

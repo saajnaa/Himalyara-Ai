@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Chatsection from "./Chatsection";
 
+ 
 function Chatai() {
 
     const [inputValue, setInputValue] = useState("");
@@ -16,14 +17,14 @@ function Chatai() {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:3000", {
+            const response = await axios.post(import.meta.env.VITE_API_URL, {
                 Message: inputValue
 
             });
 
             setResponseData(response.data);
         } catch (error) {
-            setResponseData("Error: " + error.message);
+            setResponseData("Opps! " + error.message);
         }
         setLoading(false);
         setInputValue("");
