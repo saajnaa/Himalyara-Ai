@@ -23,6 +23,8 @@ function Chatai() {
             });
 
             setResponseData(response.data);
+console.log(response)
+
         } catch (error) {
             setResponseData("Opps! " + error.message);
         }
