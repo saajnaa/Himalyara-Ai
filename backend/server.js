@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
 //=========================== POST Request Handler ========================
 
-app.post("/", gemini);
+app.post("/api", gemini);
 
 
 // Error handling middleware
@@ -36,7 +36,6 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: err.message || 'Too Much Traffic .Try Again!' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
 
-});
+// Export app for Vercel
+export default app;
